@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery.sketchIt</title>
+		<link href='http://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="index-src/main.css">
+		<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+		<script src="src/jquery.mobile.custom.min.js"></script>
+		<script src="src/jquery-ui.min.js"></script>
+		<script src="src/jquery.sketchIt.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="src/font-awesome.min.css">
+		<script>
+		$(function () {
+			$('#ex3').sketchIt({
+				tools:true
+			});
+			
+		});
+		</script>
+		<style>
+			#ex3 {
+				height: 200px;
+			}
+			#tools {
+				position: fixed;
+				z-index: 1000;
+				top: 60px;
+				right: 60px;
+	
+			}
+
+			#tools {
+				background-color: #ddd;
+				color: #565656;
+				width: 62px;
+				font-family: Arial, Sans-serif;
+				font-size: 0.85em;
+			}
+			#tools i {
+				padding: 3px;
+				display: block;
+			}
+			#tools * {
+				margin:0px;
+				padding:0px;
+			}
+			#tools ul {
+				clear: both;
+			}
+			#tools li {
+				list-style-type:none;
+				min-width: 50px;
+				min-height: 50px;
+				padding: 5px;
+				position: relative;
+				background-color: #ddd;
+				text-align:center;
+			}
+
+
+			#tools span {
+				display: block;
+				border: 1px solid #bbb;
+				width: 50px;
+				height: 50px;
+				background-color: #ddd;
+			}
+			span.text {
+				font-size: 3.3em;
+			}
+			#tools li ul {
+				display:none;
+				position: relative;
+				left: -60px;
+				top: 0px;
+				z-index: 1000;
+			}
+			#tools li:hover {
+				background-color: #bbb;
+			}
+			#tools li:hover span {
+				border-color: #999;
+			}
+			#tools li:hover>ul {
+				display:block !important;
+				position: absolute;
+			}
+
+
+
+			#tools .current {
+				background-color: #bbb;
+			}
+			.catview {
+				border: 0px !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<span class="version">jquery.sketchIt plugin: Version 1.0</span>
+				<h1>jquery.sketchIt</h1>
+				<h2>Author: <a href="https://github.com/gar-cad" rel="author">Gareth Cadwaladr</a></h2>
+			</header>
+			<ol>
+				<li><a href="ex1.html">Basic use</a></li>
+				<li><a href="ex2.html">Initial settings</a></li>
+				<li><a href="ex3.html">Toolbar</a></li>
+			</ol>
+			<section class="example" id="toolbar">
+				<h1>Toolbar</h1>
+				<h2>Example</h2>
+				<section class="display">
+					<div id="ex3"></div>
+				</section>
+				<aside id="tools">
+					<ul>
+						<li data-control="#ex3" data-tool="arrow"><span><i class="fa fa-location-arrow fa-3x"></i></span></li>
+						<li data-control="#ex3" data-tool="pen"><span><i class="fa fa-pencil fa-3x"></i></span></li>
+						<li data-control="#ex3" data-tool="eraser"><span><i class="fa fa-eraser fa-3x"></i></span></li>
+						<li data-control="#ex3" data-category="color">
+							<ul>
+								<li data-control="#ex3" data-color="#000"><span style="background-color:#000"></span></li>
+								<li data-control="#ex3" data-color="#f00"><span style="background-color:#F00"></span></li>
+								<li data-control="#ex3" data-color="#00f"><span style="background-color:#00F"></span></li>
+							</ul>
+						</li>
+						<li data-control="#ex3" data-category="width">
+							<ul>
+								<li data-control="#ex3" data-width="3"><span class="text">3</span></li>
+								<li data-control="#ex3" data-width="5"><span class="text">5</span></li>
+								<li data-control="#ex3" data-width="20"><span class="text">20</span></li>
+							</ul>
+						</li>
+						<li data-control="#ex3" data-options="clear"><span><i class="fa fa-trash-o fa-3x"></i></span></li>
+						<li data-control="#ex3" data-options="undo"><span><i class="fa fa-undo fa-3x"></i></span></li>
+						<li data-control="#ex3" data-options="redo"><span><i class="fa fa-repeat fa-3x"></i></span></li>
+					</ul>
+				</aside>
+				<h2>html</h2>
+				<section class="code">
+					<code>
+						&lt;div id="ex3"&gt;&lt;/div&gt;
+					</code>
+				</section>
+				<h2>javascript</h2>
+				<section class="code">
+					<code>
+						&lt;script src="http://code.jquery.com/jquery-2.0.1.min.js"&gt;&lt;/script&gt;<br>
+						&lt;script src="src/jquery-ui.min.js"&gt;&lt;/script&gt;<br>
+						&lt;script src="src/jquery.mobile.custom.min.js"&gt;&lt;/script&gt;<br>
+						&lt;script src="src/jquery.sketchIt.min.js"&gt;&lt;/script&gt;<br>
+						&lt;script&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;$(function () {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#ex3').sketchIt(<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tools:true,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+						&lt;/script&gt;
+					</code>
+				</section>
+				<h2>css</h2>
+				<section class="code">
+					<code>
+#ex3 {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height: 200px;<br>
+}<br>#tools {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position: fixed;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z-index: 1000;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;top: 60px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;right: 60px;<br>
+}<br>
+#tools {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: #ddd;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;color: #565656;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width: 62px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;font-family: Arial, Sans-serif;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.85em;<br>
+}<br>
+#tools i {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding: 3px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+}<br>
+#tools * {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;margin:0px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding:0px;<br>
+}<br>
+#tools ul {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;clear: both;<br>
+}<br>
+#tools li {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list-style-type:none;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;min-width: 50px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;min-height: 50px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;padding: 5px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: #ddd;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;text-align:center;<br>
+}<br>
+#tools span {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;border: 1px solid #bbb;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;width: 50px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height: 50px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: #ddd;<br>
+}<br>
+span.text {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;font-size: 3.3em;<br>
+}<br>
+#tools li ul {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display:none;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;left: -60px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;z-index: 1000;<br>
+}<br>
+#tools li:hover {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: #bbb;<br>
+}<br>
+#tools li:hover span {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;border-color: #999;<br>
+}<br>
+#tools li:hover>ul {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display:block !important;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;position: absolute;<br>
+}<br>
+#tools .current {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;background-color: #bbb;<br>
+}<br>
+.catview {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;border: 0px !important;<br>
+}<br>
+					</code>
+				</section>
+				<a href="#container" class="topLink">Top of page</a>
+			</section>
+			<footer>
+				&copy; 2013 Gareth Cadwaladr
+			</footer>
+		</div>
+	</body>
+</html>

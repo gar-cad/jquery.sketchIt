@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery.sketchIt</title>
+		<link href='http://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="index-src/main.css">
+		<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
+		<script src="src/jquery.mobile.custom.min.js"></script>
+		<script src="src/jquery-ui.min.js"></script>
+		<script src="src/jquery.sketchIt.min.js"></script>
+		<script>
+		$(function () {
+			$('#ex2').sketchIt({
+				color:'#f00',
+				width:2,
+				cap:'round'
+			});
+			
+		});
+		</script>
+		<style>
+			#ex2 {
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<span class="version">jquery.sketchIt plugin: Version 1.0</span>
+				<h1>jquery.sketchIt</h1>
+				<h2>Author: <a href="https://github.com/gar-cad" rel="author">Gareth Cadwaladr</a></h2>
+			</header>
+			<ol>
+				<li><a href="ex1.html">Basic use</a></li>
+				<li><a href="ex2.html">Initial settings</a></li>
+				<li><a href="ex3.html">Toolbar</a></li>
+			</ol>
+			<section class="example" id="initialSettings">
+				<h1>Initial settings</h1>
+				<h2>Example</h2>
+				<section class="display">
+					<div id="ex2"></div>
+				</section>
+				<h2>html</h2>
+				<section class="code">
+					<code>
+						&lt;div id="ex2"&gt;&lt;/div&gt;
+					</code>
+				</section>
+				<h2>javascript</h2>
+				<section class="code">
+					<code>
+						&lt;script src="http://code.jquery.com/jquery-2.0.1.min.js"&gt;&lt;/script&gt;<br>
+						&lt;script src="src/jquery-ui.min.js"&gt;&lt;/script&gt;<br>
+						&lt;script src="src/jquery.mobile.custom.min.js"&gt;&lt;/script&gt;<br>
+						&lt;script src="src/jquery.sketchIt.min.js"&gt;&lt;/script&gt;<br>
+						&lt;script&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;$(function () {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#ex2').sketchIt({<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color:'#f00',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width:2,<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cap:'round'<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+						&lt;/script&gt;
+					</code>
+				</section>
+				<h2>css</h2>
+				<section class="code">
+					<code>
+#ex2 {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height: 200px;<br>
+}
+					</code>
+				</section>
+				<a href="#container" class="topLink">Top of page</a>
+			</section>
+			<footer>
+				&copy; 2013 Gareth Cadwaladr
+			</footer>
+		</div>
+	</body>
+</html>
