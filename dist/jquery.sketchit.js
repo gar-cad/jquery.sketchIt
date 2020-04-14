@@ -1,4 +1,4 @@
-function Sketchit(element, settings) {
+function sketchIt(element, settings) {
 	this.canvas;
 	this.ctx;
 	this.penDown;
@@ -59,10 +59,10 @@ function Sketchit(element, settings) {
 	}
 }
 
-Sketchit.prototype = {
+sketchIt.prototype = {
 	init: function() {
-		this.$me.append('<canvas class="sketchit" width="'+this.$me.width()+'" height="'+this.$me.height()+'"></canvas>');
-		this.canvas = this.$me.find('.sketchit')[0];
+		this.$me.append('<canvas class="sketchIt" width="'+this.$me.width()+'" height="'+this.$me.height()+'"></canvas>');
+		this.canvas = this.$me.find('.sketchIt')[0];
 		this.ctx = this.canvas.getContext('2d');
 		this.penDown = false;
 		this.clicks = 0;
@@ -105,7 +105,7 @@ Sketchit.prototype = {
 					$(document).bind('vmousemove', false);
 				}
 				cursor = log.val=='arrow' ? 'auto' : 'crosshair';
-				this.$me.find('.sketchit').css('cursor',cursor);
+				this.$me.find('.sketchIt').css('cursor',cursor);
 				this.mode=log.val;
 				break;
 		}
@@ -156,7 +156,7 @@ Sketchit.prototype = {
 }
 ;(function ( $, window, document, undefined ) {
 	// ANGEN POSITION I NEUD UNDO REDO, FEL PAN UNDO, POSITION = POSITION -1 = clicks;
-	$.fn.sketchit = function(options) {
+	$.fn.sketchIt = function(options) {
 		var settings = $.extend({
 			color:'#f00',
 			width:5,
@@ -166,7 +166,7 @@ Sketchit.prototype = {
 		}, options);		
 		
 		return this.each(function() {
-			new Sketchit(this, settings);
+			new sketchIt(this, settings);
 		});
 		
 	}	
