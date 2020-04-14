@@ -30,15 +30,11 @@ Install the plugin, and use the following source code as an example. Basic use (
 
 ##### CSS
 ```
-<script src="http://code.jquery.com/jquery-2.0.1.min.js"></script>
-<script src="src/jquery-ui.min.js"></script>
-<script src="src/jquery.mobile.custom.min.js"></script>
-<script src="src/jquery.sketchIt.min.js"></script>
-<script>
-    $(function () {
-        $('#ex1').sketchIt();
-    });
-</script>
+<style>
+    #ex1 {
+        height: 200px;
+    }
+</style>
 ```
 
 ## Examples
