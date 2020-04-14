@@ -4,8 +4,7 @@ A simple jquery plugin that enables simple drawing functionality on an automatic
 
 ### Prerequisites
 
-jquery 2.0.1
-jquery mobile
+jquery 2.0.1, jquery mobile (to use the virtual mouse bindings)
 
 ### Set up
 
