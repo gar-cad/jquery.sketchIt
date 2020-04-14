@@ -9,6 +9,7 @@ function sketchIt(element, settings) {
 	this.$me = $(element);			
 	this.settings = settings;
 	this.init();
+  	o = this.$me.offset();
 	t = this; // allows us to access this within 
 	
 	// CLICK EVENTS
@@ -17,12 +18,12 @@ function sketchIt(element, settings) {
 			t.penDown = true;				
 			t.clicks++;
 			t.maxClicks++;
-			t.draw({'mode':'start','x':event.pageX,'y':event.pageY,'clickId':t.clicks},true);
+			t.draw({'mode':'start','x':event.pageX - o.left,'y':event.pageY - o.top,'clickId':t.clicks},true);
 		}
 	})
 	.on('vmousemove',function() {
 		if (t.penDown && t.mode!='arrow') {
-			t.draw({'mode':t.mode,'x':event.pageX,'y':event.pageY},true);
+			t.draw({'mode':t.mode,'x':event.pageX - o.left,'y':event.pageY - o.top},true);
 		}
 	})
 	.on('vmouseup',function() {
